@@ -119,7 +119,7 @@ disp('test stage')
 load trainImage.mat;
 %load loadImage.mat;
 label = classify(netTransfer,imageNormal);
-%label = getOutput(label)
+label = getOutput(label);
 %disp(label);
 set(handles.result_edit,'string',label);
 
