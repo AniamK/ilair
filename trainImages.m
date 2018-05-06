@@ -6,7 +6,7 @@ images = imageDatastore('3d_irisDatasets',...
     'IncludeSubfolders',true,...
     'LabelSource','foldernames');
 
-[trainingImages,validationImages] = splitEachLabel(images,0.5,'randomized');
+[trainingImages,validationImages] = splitEachLabel(images,0.8,'randomized');
 
 numTrainImages = numel(trainingImages.Labels);
 idx = randperm(numTrainImages,16);

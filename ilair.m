@@ -110,7 +110,7 @@ parr=adapthisteq(parr);
 axes(handles.axes3);
 imshow(parr);
 
-parr = imresize(parr,[227 227]) % resize
+parr = imresize(parr,[227 227]); % resize
 imageNormal = cat(3, parr, parr, parr); % convert 2d image to 3d image
 imshow(imageNormal);
 imwrite(imageNormal,'imageOutput/imageData.jpg');
@@ -119,7 +119,7 @@ disp('test stage')
 load trainImage.mat;
 %load loadImage.mat;
 label = classify(netTransfer,imageNormal);
-label = getOutput(label);
+label = getOutput(label)
 %disp(label);
 set(handles.result_edit,'string',label);
 
@@ -289,3 +289,4 @@ function train_btn_Callback(hObject, eventdata, handles)
 % hObject    handle to train_btn (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+trainImages();
