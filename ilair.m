@@ -104,8 +104,8 @@ set(handles.yi_edit,'string',num2str(ci(1)));
 set(handles.ri_edit,'string',num2str(ci(3)));
 h = viscircles([ci(2) ci(1)],ci(3));
 
-[ring,parr]=normaliseiris(imageData,ci(1),ci(2),ci(3),center(1),center(2),radius,'normal.bmp',100,300);
-%[ring,parr]=normaliseiris(imageData,ci(2),ci(1),ci(3),center(1),center(2),radius,'normal.bmp',100,300);
+%[ring,parr]=normaliseiris(imageData,ci(1),ci(2),ci(3),center(1),center(2),radius,'normal.bmp',100,300);
+[ring,parr]=normaliseiris(imageData,ci(2),ci(1),ci(3),center(1),center(2),radius,'normal.bmp',100,300);
 parr=adapthisteq(parr);
 axes(handles.axes3);
 imshow(parr);
@@ -118,8 +118,8 @@ imwrite(imageNormal,'imageOutput/imageData.jpg');
 disp('test stage')
 load trainImage.mat;
 %load loadImage.mat;
-label = classify(netTransfer,imageNormal);
-label = getOutput(label)
+label = classify(netTransfer,imageNormal)
+label = getOutput(label);
 %disp(label);
 set(handles.result_edit,'string',label);
 
